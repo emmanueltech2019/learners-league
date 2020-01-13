@@ -311,7 +311,7 @@ position: absolute;
 	font-size: 30px;
 }
 .win{
-	background-image: url('C:\Users\TECH HUB\Documents\my learning tools\my projects\biz\main\src\images\bg1.jpg');
+	background-image: url(./images/bg1.jpg);
 }
 .side-bar{
 	width:110%;
