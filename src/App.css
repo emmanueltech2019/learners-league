@@ -110,6 +110,7 @@ a:hover {
 
 .link {
 	color: #ffffff;
+	font-size: 19px;
 }
 .link:hover {
 	color: #282c34;
@@ -366,4 +367,10 @@ div:first-nth-child(even){color:green}
 }
 .boardheaders{
 	padding:100px 0px 0px 00px;
+}
+.nav-list{
+	display: inline-flex;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	font-size: 25px;
 }
