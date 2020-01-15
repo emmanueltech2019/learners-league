@@ -1,8 +1,17 @@
-import React from 'react';
-import { Navbar, Form, Nav, FormControl, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar, Form, Nav, FormControl, Button ,Modal} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import search from '../images/searcher.png'
 class Navigationbar extends React.Component {
 	render() {
+        // const [show, setShow] = useState(false);
+		// const handleClose = () => setShow(false);
+		// const handleShow = () => setShow(true);
+
+		// const [show1, setShow1] = useState(false);
+		// const handleClose1 = () => setShow1(false);
+        // const handleShow1 = () => setShow1(true);
+        
 		const { title } = this.props;
 		const items = [
 			{ name: 'Home', href: '/Home' },
@@ -29,7 +38,7 @@ class Navigationbar extends React.Component {
 							<h1>{title}</h1>
 						</Link>
 					</Navbar.Brand>
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navtoggler" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="mr-auto">
 							<Nav.Link>
@@ -51,12 +60,72 @@ class Navigationbar extends React.Component {
 								<Link to={items[5].href}>{items[5].name}</Link>
 							</Nav.Link>
 						</Nav>
-						<Form inline>
-							<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-							<Button variant="outline-success">Search</Button>
-						</Form>
 					</Navbar.Collapse>
+					<Form inline>
+						<FormControl type="search" placeholder="Search" className="mr-sm-2 searchbar" />
+						
+						<button>search</button>
+						
+						{/*                         
+						<button
+							className="btn btn-info logs"
+							variant="outline-info"
+							//  onClick={handleShow}
+						>
+							Sign up
+						</button> */}
+						<Button variant="outline-info" className="logs">
+							Sign Up
+						</Button>
+						{/* <button
+							className="btn btn-info logs "
+							variant="outline-info"
+							//  onClick={handleShow1}
+						>
+							Sign in
+						</button> */}
+						<Button variant="outline-info" className="logs">
+							Sign In
+						</Button>
+					</Form>
 				</Navbar>
+				{/* <Modal show={show} onHide={handleClose}>
+					<Modal.Header closeButton>
+						<Modal.Title>
+							<h1 className="form">Sign up</h1>
+						</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<input type="name" placeholder="first name" className="input" required />
+						<input type="name" placeholder="user name" className="input" required />
+						<input type="email" placeholder="email" className="input" required />
+						<input type="password" placeholder="password" className="input" required />
+					</Modal.Body>
+					<Modal.Footer>
+						<Button variant="secondary" onClick={handleClose}>
+							Close
+						</Button>
+						<Button variant="primary" onClick={handleClose}>
+							Submit
+						</Button>
+					</Modal.Footer>
+				</Modal>
+
+				<Modal show={show1} onHide={handleClose1}>
+					<Modal.Header closeButton>
+						<Modal.Title>
+							<h1 className="form">Sign in</h1>
+						</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<input placeholder="email" className="input" required />
+						<input placeholder="password" className="input" required />
+					</Modal.Body>
+					<Modal.Footer>
+						<Button variant="secondary">Close</Button>
+						<Button variant="primary">Submit</Button>
+					</Modal.Footer>
+				</Modal> */}
 			</div>
 		);
 	}
