@@ -159,7 +159,7 @@ class HomeBody extends React.Component{
 									</Button>
 								</Card.Body>
 							</Card>
-						</div>
+						</div> 
 
 						{/* <h1 className="aboutel"> */}
 						<p className="abtext">
