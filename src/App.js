@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigationbar from './components/Navigationbar';
 import './App.css';
 // import Navmodal from './components/Navmodal'
+import Fixeditems from './components/Fixeditems'
 
 class App extends React.Component {
 state={
@@ -27,6 +28,7 @@ state={
 		show: !this.state.show
 	})
 	}
+
 	render(){
   return (
 		<div className="App">
@@ -46,8 +48,8 @@ state={
 					<Route path="/TrendingCourses" component={TrendingCourses} />
 					<Route path="/Competition" component={Competition} />
 				</Switch>
-
-				<Footer />
+				<Fixeditems/>
+				<Footer title="Learners League"/>
 			</Router>
 
 			{/* <input 

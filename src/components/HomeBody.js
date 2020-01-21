@@ -19,7 +19,7 @@ class HomeBody extends React.Component{
 		super();
 		this.state = {
 			aboutUs:"About Learner's League ",
-			siteName:"Learner's, League",
+			siteName:"Who Owns Learner's, League ",
 			ourvisions:"Our visions",
 			ourForce:'Our driving force'
 		}
@@ -45,13 +45,13 @@ class HomeBody extends React.Component{
 					/>
 				</section>
 				<section className="win">
-					<div style={{ width: '95%', textAlign: 'center', margin: 'auto' }}>
-						<p className="abtext">
-							<label style={{ fontSize: '50px' }}>{this.state.siteName}</label>
-							{explainElText}
-						</p>
+					<div style={{ width: '90%', textAlign: 'center', margin: 'auto' }}>
+						<label className="foudersheader">{this.state.siteName}</label>
+						{/* <h1 className="aboutel"> */}
+						<p className="abtext">{explainElText}</p>
+						{/* </h1> */}
 						<div className="cards">
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -63,12 +63,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>founding CEO</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -80,12 +80,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>founding CPO</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -97,7 +97,7 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>founding PR</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
@@ -108,7 +108,7 @@ class HomeBody extends React.Component{
 						<hr />
 						<br />
 						<div className="cards">
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -120,12 +120,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>founding CTO</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -137,12 +137,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>founding PR</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -154,15 +154,21 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>founding CMO</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
 						</div>
-						<h1 class="boardheaders">board of directors</h1>
+
+						{/* <h1 className="aboutel"> */}
+						<p className="abtext">
+							<label className="boardheader">{this.state.siteName}</label>
+							{explainElText}
+						</p>
+						{/* </h1> */}
 						<div className="cards">
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -174,12 +180,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>pending.....</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -191,12 +197,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>pending.....</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -208,7 +214,7 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>pending.....</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
@@ -219,7 +225,7 @@ class HomeBody extends React.Component{
 						<hr />
 						<br />
 						<div className="cards">
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -231,12 +237,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>pending.....</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -248,12 +254,12 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>pending.....</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>
 							</Card>
-							<Card style={{ width: '18rem' }} className="cardspace">
+							<Card className="cardspace">
 								<Card.Img
 									style={{ height: '200px', borderRadius: '5px' }}
 									variant="top"
@@ -265,7 +271,7 @@ class HomeBody extends React.Component{
 									<hr />
 									<Card.Text>pending.....</Card.Text>
 									<hr />
-									<Button variant="primary">
+									<Button variant="primary" className="card-btn">
 										view profile <span>&#187;</span>
 									</Button>
 								</Card.Body>

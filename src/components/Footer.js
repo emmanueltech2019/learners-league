@@ -1,14 +1,15 @@
 import React from 'react';
 import '../App.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
-function Footer() {
+function Footer(props) {
+	const { title } = props;
 		const year = new Date().getFullYear();
         const fitems = [
 			{ name: 'TopStudents', href: '/TopStudents' },
 			{ name: 'TopTutors', href: '/TopTutors' },
 			{ name: 'TrendingCourses', href: '/TrendingCourses' },
-			{ name: 'Competition,', href: '/Competition' },
+			{ name: 'Competition & Winners List,', href: '/Competition' },
 		].map((item, i) => {
 			return (
 				<li key={i}>
@@ -18,19 +19,19 @@ function Footer() {
 				</li>
 			);
 		});
+		
 		return (
 			<div>
-				<nav className="footer">
+				<footer className="footer">
 					<div>
-					
-							
-					<ul style={{ listStyle: 'none', display: 'inline-flex' }}>{fitems}</ul>
-					<label style={{ textAlign: 'right', fontSize: '25px', color:'blue'}}>
-					Copyright @ all right reserved {year}
-					</label>
-								
+						<label className="copyright">
+							© Copyright {year} <Link>{title}</Link> All Right Reserved
+						</label>
+						<ul className="footerlist">
+							{fitems}
+						</ul>
 					</div>
-				</nav>
+				</footer>
 			</div>
 		);
 	}

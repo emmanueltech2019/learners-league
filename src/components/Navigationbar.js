@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
-import { Navbar, Form, Nav, FormControl, Button ,Modal} from 'react-bootstrap';
+import React from 'react';
+import { Navbar, Form, Nav, FormControl, Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import search from '../images/searcher.png'
+// import search from '../images/searcher.png'
 class Navigationbar extends React.Component {
-	render() {
-        // const [show, setShow] = useState(false);
-		// const handleClose = () => setShow(false);
-		// const handleShow = () => setShow(true);
+	constructor(props) {
+		super(props);
 
-		// const [show1, setShow1] = useState(false);
-		// const handleClose1 = () => setShow1(false);
-        // const handleShow1 = () => setShow1(true);
-        
+		this.state = {
+			show: false,
+			show1: false,
+		};
+	}
+	render() {
+		const {show, show1} = this.state
+
+		const handleClose = () => this.setState({ show: false });
+		const handleShow = () => this.setState({ show: true });
+
+		const handleClose1 = () => this.setState({ show1: false });
+		const handleShow1 = () => this.setState({ show1: true });
+
 		const { title } = this.props;
 		const items = [
 			{ name: 'Home', href: '/Home' },
 			{ name: 'School', href: '/School' },
 			{ name: 'Skill', href: '/Skills' },
-			{ name: 'Get Employed', href: '/jobs' },
+			{ name: 'Jobs', href: '/jobs' },
 			{ name: 'Blog', href: '/Blog' },
 			{ name: 'Contact', href: '/Contact' },
 		];
-		// .map((item, i) => {
-		// 	return (
-		// 		<li key={i} className="items">
-		// 			<NavLink className="link" to={item.href}>
-		// 				{item.name}
-		// 			</NavLink>
-		// 		</li>
-		// 	);
-		// });
 		return (
 			<div>
-				<Navbar bg="dark" expand="lg">
+				<Navbar bg="dark" expand="lg" className='navbar nav'>
 					<Navbar.Brand href="#home">
 						<Link to={items[0].href}>
 							<h1>{title}</h1>
@@ -51,7 +50,7 @@ class Navigationbar extends React.Component {
 								<Link to={items[2].href}>{items[2].name}</Link>
 							</Nav.Link>
 							<Nav.Link>
-								<Link to={items[3].href}>{items[3].name}</Link>
+								<Link className="get-employed-link" to={items[3].href}>{items[3].name}</Link>
 							</Nav.Link>
 							<Nav.Link>
 								<Link to={items[4].href}>{items[4].name}</Link>
@@ -63,9 +62,9 @@ class Navigationbar extends React.Component {
 					</Navbar.Collapse>
 					<Form inline>
 						<FormControl type="search" placeholder="Search" className="mr-sm-2 searchbar" />
-						
+
 						<button>search</button>
-						
+
 						{/*                         
 						<button
 							className="btn btn-info logs"
@@ -74,7 +73,7 @@ class Navigationbar extends React.Component {
 						>
 							Sign up
 						</button> */}
-						<Button variant="outline-info" className="logs">
+						<Button variant="outline-info" className="logs" onClick={handleShow}>
 							Sign Up
 						</Button>
 						{/* <button
@@ -84,12 +83,12 @@ class Navigationbar extends React.Component {
 						>
 							Sign in
 						</button> */}
-						<Button variant="outline-info" className="logs">
+						<Button variant="outline-info" className="logs" onClick={handleShow1}>
 							Sign In
 						</Button>
 					</Form>
 				</Navbar>
-				{/* <Modal show={show} onHide={handleClose}>
+				<Modal show={show} onHide={handleClose}>
 					<Modal.Header closeButton>
 						<Modal.Title>
 							<h1 className="form">Sign up</h1>
@@ -125,7 +124,7 @@ class Navigationbar extends React.Component {
 						<Button variant="secondary">Close</Button>
 						<Button variant="primary">Submit</Button>
 					</Modal.Footer>
-				</Modal> */}
+				</Modal>
 			</div>
 		);
 	}
