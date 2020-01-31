@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './pages/Home';
+import Landing from './pages/Landing';
 import School from './pages/School';
 import Skills from './pages/Skills';
 import Jobs from './pages/Jobs';
@@ -16,7 +17,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigationbar from './components/Navigationbar';
 import './App.css';
 // import Navmodal from './components/Navmodal'
-import Fixeditems from './components/Fixeditems'
+import GoTopButton from './components/Fixeditems'
 
 class App extends React.Component {
 state={
@@ -32,12 +33,14 @@ state={
 	render(){
   return (
 		<div className="App">
+			{/* <Landing /> */}
 			<Router>
 				<Navigationbar title="Learner's League" />
 
 				<Switch>
+					{/* <Route exact path={['/',]} component={Landing} /> */}
 					<Route exact path={['/', '/Home', '/title']} component={Home} />
-					<Route exact path="/school" component={School} />
+					<Route path="/school" component={School} />
 					<Route path="/school/Programming" component={Programming} />
 					<Route path="/skills" component={Skills} />
 					<Route path="/Jobs" component={Jobs} />
@@ -48,8 +51,8 @@ state={
 					<Route path="/TrendingCourses" component={TrendingCourses} />
 					<Route path="/Competition" component={Competition} />
 				</Switch>
-				<Fixeditems/>
-				<Footer title="Learners League"/>
+				<GoTopButton style={{float:'left'}}/>
+				<Footer title="Learners League" />
 			</Router>
 
 			{/* <input 

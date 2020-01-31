@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar, Form, Nav, FormControl, Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import logo from '../images/easylearning.jpg';
+// import url('https://fonts.googleapis.com/css?family=Inconsolata:700')
 // import search from '../images/searcher.png'
 class Navigationbar extends React.Component {
 	constructor(props) {
@@ -31,10 +33,13 @@ class Navigationbar extends React.Component {
 		];
 		return (
 			<div>
-				<Navbar bg="dark" expand="lg" className='navbar nav'>
+				<Navbar bg="dark" expand="lg" className="navbar nav">
 					<Navbar.Brand href="#home">
-						<Link to={items[0].href}>
-							<h1>{title}</h1>
+						<Link to={items[0].href} className="lltitle">
+							<div style={{ display: 'inline-flex' }}>
+								{' '}
+								<h1 className="namelogo">{title}</h1>
+							</div>
 						</Link>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navtoggler" />
@@ -50,7 +55,9 @@ class Navigationbar extends React.Component {
 								<Link to={items[2].href}>{items[2].name}</Link>
 							</Nav.Link>
 							<Nav.Link>
-								<Link className="get-employed-link" to={items[3].href}>{items[3].name}</Link>
+								<Link className="get-employed-link" to={items[3].href}>
+									{items[3].name}
+								</Link>
 							</Nav.Link>
 							<Nav.Link>
 								<Link to={items[4].href}>{items[4].name}</Link>
@@ -61,10 +68,13 @@ class Navigationbar extends React.Component {
 						</Nav>
 					</Navbar.Collapse>
 					<Form inline>
-						<FormControl type="search" placeholder="Search" className="mr-sm-2 searchbar" />
-
-						<button>search</button>
-
+						<input type="search" placeholder="Search" className="mr-sm-2 searchbar" />	
+						<Button variant="outline-info" className="logs" onClick={handleShow}>
+							Sign Up
+						</Button>
+						<Button variant="outline-info" className="logs" onClick={handleShow1}>
+							Sign In
+						</Button>	
 						{/*                         
 						<button
 							className="btn btn-info logs"
@@ -73,9 +83,7 @@ class Navigationbar extends React.Component {
 						>
 							Sign up
 						</button> */}
-						<Button variant="outline-info" className="logs" onClick={handleShow}>
-							Sign Up
-						</Button>
+
 						{/* <button
 							className="btn btn-info logs "
 							variant="outline-info"
@@ -83,9 +91,6 @@ class Navigationbar extends React.Component {
 						>
 							Sign in
 						</button> */}
-						<Button variant="outline-info" className="logs" onClick={handleShow1}>
-							Sign In
-						</Button>
 					</Form>
 				</Navbar>
 				<Modal show={show} onHide={handleClose}>
